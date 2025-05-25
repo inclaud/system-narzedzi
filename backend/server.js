@@ -18,8 +18,8 @@ require('dotenv').config();
 const authRoutes = require('./routes/auth');       // Trasy autentykacji
 const userRoutes = require('./routes/users');      // Trasy zarządzania użytkownikami
 const groupRoutes = require('./routes/groups');    // Trasy zarządzania grupami
-//const toolRoutes = require('./routes/tools');      // Trasy zarządzania narzędziami
-//const logRoutes = require('./routes/logs');        // Trasy do logów i raportów
+const toolRoutes = require('./routes/tools');      // Trasy zarządzania narzędziami
+const logRoutes = require('./routes/logs');        // Trasy do logów i raportów
 const passportConfig = require('./config/passport'); // Konfiguracja Passport.js
 
 // Inicjalizacja aplikacji Express i klienta Prisma
@@ -149,11 +149,11 @@ app.get('/', (req, res) => {
 });
 
 // Podłączanie tras z odpowiednimi prefiksami
-//app.use('/api/auth', authRoutes);      // Trasy autentykacji: /api/auth/*
-//app.use('/api/users', userRoutes);     // Zarządzanie użytkownikami: /api/users/*
-//app.use('/api/groups', groupRoutes);   // Zarządzanie grupami: /api/groups/*
-//app.use('/api/tools', toolRoutes);     // Zarządzanie narzędziami: /api/tools/*
-//app.use('/api/logs', logRoutes);       // Logi i raporty: /api/logs/*
+app.use('/api/auth', authRoutes);      // Trasy autentykacji: /api/auth/*
+app.use('/api/users', userRoutes);     // Zarządzanie użytkownikami: /api/users/*
+app.use('/api/groups', groupRoutes);   // Zarządzanie grupami: /api/groups/*
+app.use('/api/tools', toolRoutes);     // Zarządzanie narzędziami: /api/tools/*
+app.use('/api/logs', logRoutes);       // Logi i raporty: /api/logs/*
 
 // ==================== MIDDLEWARE OBSŁUGI BŁĘDÓW ====================
 

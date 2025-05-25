@@ -438,8 +438,6 @@ const requireGroupAdmin = (groupId) => {
   };
 };
 
-module.exports = {
-  requireAuth,
-  requireSuperAdmin,
-  requireGroupAdmin
-};
+module.exports.requireAuth = requireAuth;
+module.exports.requireSuperAdmin = requireSuperAdmin;
+module.exports.requireGroupAdmin = requireGroupAdmin;
